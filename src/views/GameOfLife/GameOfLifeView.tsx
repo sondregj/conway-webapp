@@ -81,7 +81,7 @@ const GameOfLifeView = () => {
             <div className={styles.description}>
                 <p>
                     Game of Life is a cellular automaton. It starts with an initial
-                    state, and is using a set of rules transformed through iterations.
+                    state, and is transformed through iterations using a set of rules.
                     <p>
                         <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
                             Conway's Game of Life on Wikipedia.
