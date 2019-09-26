@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+import GameOfLifeView from './views/GameOfLife'
+import Footer from './components/Footer'
+
+import styles from './App.module.scss'
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.app}>
+            <header></header>
+
+            <main style={{ padding: '0 24px' }}>
+                <GameOfLifeView />
+            </main>
+
+            <Footer />
+        </div>
+    )
 }
 
-export default App;
+export default App
