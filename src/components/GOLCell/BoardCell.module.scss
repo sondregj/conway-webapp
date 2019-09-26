@@ -9,3 +9,8 @@ div.cell {
 
     background-color: black;
 }
+
+div.cell:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
