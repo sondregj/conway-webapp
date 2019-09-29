@@ -1,22 +1,20 @@
 import React from 'react'
 
-import GameOfLifeView from './views/GameOfLife'
-import Footer from './components/Footer'
+import { Footer } from './components'
+import { GameOfLifeView } from './views'
 
-import styles from './App.module.scss'
+import css from './App.module.scss'
 
-const App: React.FC = () => {
-    return (
-        <div className={styles.app}>
-            <header></header>
+const App = () => (
+    <div className={css.app}>
+        <header></header>
 
-            <main style={{ padding: '0 24px' }}>
-                <GameOfLifeView />
-            </main>
+        <main className={css.content}>
+            <GameOfLifeView />
+        </main>
 
-            <Footer />
-        </div>
-    )
-}
+        <Footer />
+    </div>
+)
 
 export default App
