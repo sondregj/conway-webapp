@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react'
-
-import GameOfLifeContext from '../../contexts/gol'
-
-import GOLBoard from '../../components/GOLBoard'
-import Button from '../../components/Button'
-import RangeSlider from '../../components/RangeSlider'
-
 import { Board, initializeBoard, advance } from '@sondregj/conway'
 
-import styles from './GameOfLife.module.scss'
+import { GOLBoard, Button, RangeSlider } from '../../components'
+import GameOfLifeContext from '../../contexts/gol'
+
+import css from './GameOfLife.module.scss'
 
 const WIDTH = 29
 const HEIGHT = 15
@@ -36,6 +32,7 @@ const GameOfLifeView = () => {
                 random: true,
             }),
         )
+        setIteration(0)
     }
 
     const reset = () => {
@@ -57,7 +54,7 @@ const GameOfLifeView = () => {
                 row.map((cell, xIndex) =>
                     xIndex === x && yIndex === y
                         ? { ...cell, alive: !cell.alive }
-                        : cell,
+                        : { ...cell },
                 ),
             ),
         }
@@ -75,23 +72,23 @@ const GameOfLifeView = () => {
     }, [isPlaying, speed, iteration, oneStep])
 
     return (
-        <div className={styles.golView}>
+        <div className={css.container}>
             <h1>Game of Life</h1>
 
-            <div className={styles.description}>
+            <div className={css.description}>
                 <p>
                     Game of Life is a cellular automaton. It starts with an initial
                     state, and is transformed through iterations using a set of rules.
-                    <p>
-                        <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
-                            Conway's Game of Life on Wikipedia.
-                        </a>
-                    </p>
+                </p>
+                <p>
+                    <a href="https://en.wikipedia.org/wiki/Hitori">
+                        Conway's Game of Life on Wikipedia.
+                    </a>
                 </p>
             </div>
 
-            <div className={styles.controller}>
-                <div className={styles.inputs}>
+            <div className={css.controller}>
+                <div className={css.inputs}>
                     <RangeSlider
                         value={speed}
                         handleChange={handleChangeSpeed}
@@ -100,7 +97,7 @@ const GameOfLifeView = () => {
                     />
                 </div>
 
-                <div className={styles.buttons}>
+                <div className={css.buttons}>
                     <Button onClick={reset}>↺ RESET</Button>
                     <Button onClick={randomize}>⚅ RANDOMIZE</Button>
                     <Button onClick={oneStep}>STEP FORWARD</Button>
@@ -110,20 +107,20 @@ const GameOfLifeView = () => {
                 </div>
             </div>
 
-            <div className={styles.status}>
+            <div className={css.status}>
                 <div>
-                    <div className={styles.statusTag}>EPOCH</div>
-                    <div className={styles.statusValue}>{iteration}</div>
+                    <div className={css.statusTag}>EPOCH</div>
+                    <div className={css.statusValue}>{iteration}</div>
                 </div>
                 <div>
-                    <div className={styles.statusTag}>SPEED</div>
-                    <div className={styles.statusValue}>
+                    <div className={css.statusTag}>SPEED</div>
+                    <div className={css.statusValue}>
                         {speed} {speed === 1 ? 'epoch' : 'epochs'} / second
                     </div>
                 </div>
                 <div>
-                    <div className={styles.statusTag}>ALIVE CELLS</div>
-                    <div className={styles.statusValue}>
+                    <div className={css.statusTag}>ALIVE CELLS</div>
+                    <div className={css.statusValue}>
                         {board.cells
                             .flat()
                             .reduce(
@@ -134,7 +131,7 @@ const GameOfLifeView = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.boardContainer}>
+            <div className={css.boardContainer}>
                 <GameOfLifeContext.Provider value={{ toggleCell }}>
                     {board ? <GOLBoard board={board} /> : null}
                 </GameOfLifeContext.Provider>
