@@ -55,8 +55,6 @@ const GameOfLifeView = () => {
 
     return (
         <div className={css.container}>
-            <h1>Game of Life</h1>
-
             <div className={css.description}>
                 <p>
                     Game of Life is a cellular automaton. It starts with an initial
