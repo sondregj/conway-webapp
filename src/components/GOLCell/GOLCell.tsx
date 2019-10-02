@@ -3,7 +3,7 @@ import { Cell } from '@sondregj/conway'
 
 import GameOfLifeContext from '../../contexts/gol'
 
-import css from './BoardCell.module.scss'
+import css from './GOLCell.module.scss'
 
 interface BoardCellProps {
     cell: Cell

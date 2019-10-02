@@ -1,3 +1,3 @@
-import BoardCell from './BoardCell'
+import GOLCell from './GOLCell'
 
-export default BoardCell
+export default GOLCell
