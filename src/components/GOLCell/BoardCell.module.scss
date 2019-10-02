@@ -1,4 +1,4 @@
-div.cell {
+div.container {
     flex: 1 0 0;
 
     margin: 3px 3px;
@@ -7,10 +7,14 @@ div.cell {
     min-height: 1px;
     min-width: 1px;
 
-    background-color: black;
-}
+    background-color: lightgrey;
 
-div.cell:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+    &.alive {
+        background-color: blue;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
 }

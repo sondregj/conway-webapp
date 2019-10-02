@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-
 import { Cell } from '@sondregj/conway'
 
-import styles from './BoardCell.module.scss'
 import GameOfLifeContext from '../../contexts/gol'
+
+import css from './BoardCell.module.scss'
 
 interface BoardCellProps {
     cell: Cell
@@ -17,12 +17,8 @@ const BoardCell: React.FC<BoardCellProps> = ({ cell, x, y }) => {
 
     return (
         <div
-            onClick={() => {
-                console.log(x, y)
-                toggleCell(x, y)
-            }}
-            className={styles.cell}
-            style={{ backgroundColor: cell.alive ? 'blue' : 'lightgrey' }}
+            className={`${css.container} ${cell.alive ? css.alive : ''}`}
+            onClick={() => toggleCell(x, y)}
         />
     )
 }

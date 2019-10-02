@@ -1,11 +1,11 @@
 import React from 'react'
-
-import GOLRow from '../GOLRow'
-import GameOfLifeContext from '../../contexts/gol'
-
 import { Board } from '@sondregj/conway'
 
-import styles from './GOLBoard.module.scss'
+import GameOfLifeContext from '../../contexts/gol'
+
+import { GOLRow } from '..'
+
+import css from './GOLBoard.module.scss'
 
 interface GOLBoardProps {
     board: Board
@@ -29,7 +29,7 @@ const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
     }
 
     return (
-        <div className={styles.board}>
+        <div className={css.container}>
             <GameOfLifeContext.Provider value={{ toggleCell }}>
                 {board.cells.map((row, y) => (
                     <GOLRow key={y} row={row} y={y} />
