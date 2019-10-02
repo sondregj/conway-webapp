@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Board, initializeBoard, advance } from '@sondregj/conway'
 
 import { GOLBoard, Button, RangeSlider } from '../../components'
-import GameOfLifeContext from '../../contexts/gol'
 
 import css from './GameOfLife.module.scss'
 
@@ -42,23 +41,6 @@ const GameOfLifeView = () => {
 
     const handleChangeSpeed = (e: any) => {
         setSpeed(e.target.value)
-    }
-
-    const toggleCell = (x, y) => {
-        const currentValue = !board.cells[y][x].alive
-
-        const newBoard: Board = {
-            width: board.width,
-            height: board.height,
-            cells: board.cells.map((row, yIndex) =>
-                row.map((cell, xIndex) =>
-                    xIndex === x && yIndex === y
-                        ? { ...cell, alive: !cell.alive }
-                        : { ...cell },
-                ),
-            ),
-        }
-        setBoard(newBoard)
     }
 
     useEffect(() => {
@@ -132,9 +114,7 @@ const GameOfLifeView = () => {
                 </div>
             </div>
             <div className={css.boardContainer}>
-                <GameOfLifeContext.Provider value={{ toggleCell }}>
-                    {board ? <GOLBoard board={board} /> : null}
-                </GameOfLifeContext.Provider>
+                <GOLBoard board={board} setBoard={setBoard} />
             </div>
         </div>
     )
