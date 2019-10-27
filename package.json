@@ -5,16 +5,16 @@
 	"dependencies": {
 		"@sondregj/conway": "^1.0.1",
 		"feather-icons-react": "^0.3.2",
-		"react": "^16.10.2",
-		"react-dom": "^16.10.2",
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0",
 		"react-scripts": "3.2.0"
 	},
 	"devDependencies": {
-		"@types/jest": "24.0.18",
-		"@types/node": "12.7.12",
-		"@types/react": "16.9.5",
-		"@types/react-dom": "16.9.1",
-		"node-sass": "^4.12.0",
+		"@types/jest": "24.0.20",
+		"@types/node": "12.11.7",
+		"@types/react": "16.9.11",
+		"@types/react-dom": "16.9.3",
+		"node-sass": "^4.13.0",
 		"prettier": "1.18.2",
 		"tslint": "^5.20.0",
 		"tslint-config-prettier": "1.18.0",
