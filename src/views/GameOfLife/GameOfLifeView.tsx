@@ -54,8 +54,8 @@ const GameOfLifeView = () => {
     }, [isPlaying, speed, iteration, oneStep])
 
     return (
-        <div className={css.container}>
-            <div className={css.description}>
+        <article className={css.container}>
+            <section className={css.description}>
                 <p>
                     Game of Life is a cellular automaton. It starts with an initial
                     state, and is transformed through iterations using a set of rules.
@@ -65,9 +65,9 @@ const GameOfLifeView = () => {
                         Conway's Game of Life on Wikipedia.
                     </a>
                 </p>
-            </div>
+            </section>
 
-            <div className={css.controller}>
+            <section className={css.controller}>
                 <div className={css.inputs}>
                     <RangeSlider
                         value={speed}
@@ -85,9 +85,9 @@ const GameOfLifeView = () => {
                         {isPlaying ? '■ STOP' : '▶ START'}
                     </Button>
                 </div>
-            </div>
+            </section>
 
-            <div className={css.status}>
+            <section className={css.status}>
                 <div>
                     <div className={css.statusTag}>EPOCH</div>
                     <div className={css.statusValue}>{iteration}</div>
@@ -110,11 +110,12 @@ const GameOfLifeView = () => {
                         / {board.width * board.height}
                     </div>
                 </div>
-            </div>
-            <div className={css.boardContainer}>
+            </section>
+
+            <section className={css.board}>
                 <GOLBoard board={board} setBoard={setBoard} />
-            </div>
-        </div>
+            </section>
+        </article>
     )
 }
 
