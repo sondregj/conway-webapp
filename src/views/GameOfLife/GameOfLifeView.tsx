@@ -61,7 +61,7 @@ const GameOfLifeView = () => {
                     state, and is transformed through iterations using a set of rules.
                 </p>
                 <p>
-                    <a href="https://en.wikipedia.org/wiki/Hitori">
+                    <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">
                         Conway's Game of Life on Wikipedia.
                     </a>
                 </p>
