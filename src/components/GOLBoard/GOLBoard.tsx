@@ -1,8 +1,7 @@
 import React from 'react'
 import { Board } from '@sondregj/conway'
 
-import GameOfLifeContext from '../../contexts/gol'
-
+import { GameOfLifeContext } from '../../contexts/gol'
 import { GOLRow } from '..'
 
 import css from './GOLBoard.module.scss'
@@ -12,8 +11,8 @@ interface GOLBoardProps {
     setBoard: (board: Board) => void
 }
 
-const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
     const toggleCell = (x, y) => {
+export const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
         const newBoard: Board = {
             width: board.width,
             height: board.height,
@@ -38,5 +37,3 @@ const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
         </div>
     )
 }
-
-export default GOLBoard

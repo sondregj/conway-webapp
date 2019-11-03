@@ -4,9 +4,9 @@ import FeatherIcon from 'feather-icons-react'
 
 import styles from './Footer.module.css'
 
-const Footer: React.FC = () => (
     <footer className={styles.footer}>
         <div className={styles.socialLinks}>
+export const Footer: React.FC = () => (
             <a
                 className={`${styles.socialLink} ${styles.gitHubIcon}`}
                 href="https://github.com/sondregj"
@@ -49,5 +49,3 @@ const Footer: React.FC = () => (
         <span className={styles.copyright}>Sondre Gjellestad | 2019</span>
     </footer>
 )
-
-export default Footer

@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
 import { Cell } from '@sondregj/conway'
 
-import GameOfLifeContext from '../../contexts/gol'
+import { GameOfLifeContext } from '../../contexts/gol'
 
 import css from './GOLCell.module.scss'
 
-interface BoardCellProps {
+interface GOLCellProps {
     cell: Cell
 
     x: number
     y: number
 }
 
-const BoardCell: React.FC<BoardCellProps> = ({ cell, x, y }) => {
+export const GOLCell: React.FC<GOLCellProps> = ({ cell, x, y }) => {
     const { toggleCell } = useContext(GameOfLifeContext)
 
     return (
@@ -22,5 +22,3 @@ const BoardCell: React.FC<BoardCellProps> = ({ cell, x, y }) => {
         />
     )
 }
-
-export default BoardCell

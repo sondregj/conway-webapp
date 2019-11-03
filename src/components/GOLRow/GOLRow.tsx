@@ -11,12 +11,10 @@ interface GOLRowProps {
     y: number
 }
 
-const GOLRow: React.FC<GOLRowProps> = ({ row, y }) => (
+export const GOLRow: React.FC<GOLRowProps> = ({ row, y }) => (
     <div className={css.container}>
         {row.map((cell, x) => (
             <GOLCell key={x} cell={cell} x={x} y={y} />
         ))}
     </div>
 )
-
-export default GOLRow

@@ -9,6 +9,7 @@ const WIDTH = 29
 const HEIGHT = 15
 
 const GameOfLifeView = () => {
+export const GameOfLifeView = () => {
     const [board, setBoard] = useState<Board>(initializeBoard(WIDTH, HEIGHT))
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
     const [iteration, setIteration] = useState<number>(0)

@@ -1,3 +1,1 @@
-import GOLBoard from './GOLBoard'
-
-export default GOLBoard
+export { GOLBoard } from './GOLBoard'

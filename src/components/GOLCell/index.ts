@@ -1,3 +1,1 @@
-import GOLCell from './GOLCell'
-
-export default GOLCell
+export { GOLCell } from './GOLCell'

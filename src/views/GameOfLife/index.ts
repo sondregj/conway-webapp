@@ -1,3 +1,1 @@
-import GameOfLifeView from './GameOfLifeView'
-
-export default GameOfLifeView
+export { GameOfLifeView } from './GameOfLifeView'

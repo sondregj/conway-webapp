@@ -7,7 +7,7 @@ interface ButtonProps {
     disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ children, disabled, onClick }) => (
+export const Button: React.FC<ButtonProps> = ({ children, disabled, onClick }) => (
     <div
         className={css.container + (disabled ? ' ' + css.disabled : '')}
         onClick={!disabled ? onClick : () => undefined}
@@ -15,5 +15,3 @@ const Button: React.FC<ButtonProps> = ({ children, disabled, onClick }) => (
         {children}
     </div>
 )
-
-export default Button
