@@ -2,6 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Board, initializeBoard, advance } from '@sondregj/conway'
 
 import { GOLBoard, Button, RangeSlider } from '../../components'
+import {
+    GOLBoard,
+    Button,
+    RangeSlider,
+    DropdownMenu,
+    GOLStatus,
+} from '../../components'
 
 import css from './GameOfLife.module.scss'
 
@@ -88,30 +95,7 @@ export const GameOfLifeView = () => {
                 </div>
             </section>
 
-            <section className={css.status}>
-                <div>
-                    <div className={css.statusTag}>EPOCH</div>
-                    <div className={css.statusValue}>{iteration}</div>
-                </div>
-                <div>
-                    <div className={css.statusTag}>SPEED</div>
-                    <div className={css.statusValue}>
-                        {speed} {speed === 1 ? 'epoch' : 'epochs'} / second
-                    </div>
-                </div>
-                <div>
-                    <div className={css.statusTag}>ALIVE CELLS</div>
-                    <div className={css.statusValue}>
-                        {board.cells
-                            .flat()
-                            .reduce(
-                                (sum, cell) => (cell.alive ? sum + 1 : sum),
-                                0,
-                            )}{' '}
-                        / {board.width * board.height}
-                    </div>
-                </div>
-            </section>
+            <GOLStatus epoch={iteration} speed={speed} board={board} />
 
             <section className={css.board}>
                 <GOLBoard board={board} setBoard={setBoard} />
