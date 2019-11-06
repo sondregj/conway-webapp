@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Board, initializeBoard, advance } from '@sondregj/conway'
+import {
+    Board,
+    initializeBoard,
+    advance,
+    RuleFunction,
+    conwayRules,
+} from '@sondregj/conway'
 
-import { GOLBoard, Button, RangeSlider } from '../../components'
 import {
     GOLBoard,
     Button,
@@ -15,19 +20,30 @@ import css from './GameOfLife.module.scss'
 const WIDTH = 29
 const HEIGHT = 15
 
-const GameOfLifeView = () => {
+enum RuleFunctions {
+    CONWAY_DEFAULT = 'CONWAY_DEFAULT',
+}
+
+const ruleFunctionOptions = [{ label: 'Default', value: RuleFunctions.CONWAY_DEFAULT }]
+
+const ruleFunctionList = {
+    [RuleFunctions.CONWAY_DEFAULT]: conwayRules,
+}
+
 export const GameOfLifeView = () => {
     const [board, setBoard] = useState<Board>(initializeBoard(WIDTH, HEIGHT))
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
     const [iteration, setIteration] = useState<number>(0)
     const [speed, setSpeed] = useState<number>(1)
 
+    const [ruleFunction, setRuleFunction] = useState<RuleFunction>()
+
     const oneStep = useCallback(() => {
-        const nextBoard = advance(board)
+        const nextBoard = advance(board, ruleFunction)
 
         setBoard(nextBoard)
         setIteration(iteration + 1)
-    }, [board, iteration])
+    }, [board, iteration, ruleFunction])
 
     const togglePlaying = () => {
         setIsPlaying(!isPlaying)
@@ -49,6 +65,12 @@ export const GameOfLifeView = () => {
 
     const handleChangeSpeed = (e: any) => {
         setSpeed(e.target.value)
+    }
+
+    const handleRuleFunctionChange = (e: any) => {
+        const func = ruleFunctionList[e.currentTarget.value]
+
+        setRuleFunction(func)
     }
 
     useEffect(() => {
@@ -83,6 +105,10 @@ export const GameOfLifeView = () => {
                         min={1}
                         max={25}
                     />
+                    <DropdownMenu
+                        options={ruleFunctionOptions}
+                        handleChange={handleRuleFunctionChange}
+                    />
                 </div>
 
                 <div className={css.buttons}>
@@ -103,5 +129,3 @@ export const GameOfLifeView = () => {
         </article>
     )
 }
-
-export default GameOfLifeView
