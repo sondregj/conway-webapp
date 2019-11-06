@@ -11,11 +11,9 @@ interface GOLBoardProps {
     setBoard: (board: Board) => void
 }
 
-    const toggleCell = (x, y) => {
 export const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
+    const toggleCell = (x: number, y: number) => {
         const newBoard: Board = {
-            width: board.width,
-            height: board.height,
             cells: board.cells.map((row, yIndex) =>
                 row.map((cell, xIndex) =>
                     xIndex === x && yIndex === y
@@ -24,16 +22,17 @@ export const GOLBoard: React.FC<GOLBoardProps> = ({ board, setBoard }) => {
                 ),
             ),
         }
+
         setBoard(newBoard)
     }
 
     return (
-        <div className={css.container}>
+        <section className={css.container}>
             <GameOfLifeContext.Provider value={{ toggleCell }}>
                 {board.cells.map((row, y) => (
                     <GOLRow key={y} row={row} y={y} />
                 ))}
             </GameOfLifeContext.Provider>
-        </div>
+        </section>
     )
 }
