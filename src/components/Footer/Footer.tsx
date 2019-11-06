@@ -1,51 +1,46 @@
 import React from 'react'
-
 import FeatherIcon from 'feather-icons-react'
 
-import styles from './Footer.module.css'
+import css from './Footer.module.css'
 
-    <footer className={styles.footer}>
-        <div className={styles.socialLinks}>
 export const Footer: React.FC = () => (
+    <footer className={css.footer}>
+        <div className={css.socialLinks}>
             <a
-                className={`${styles.socialLink} ${styles.gitHubIcon}`}
+                className={`${css.socialLink} ${css.gitHubIcon}`}
                 href="https://github.com/sondregj"
             >
-                <FeatherIcon className={styles.socialIcon} size="48px" icon="github" />
+                <FeatherIcon className={css.socialIcon} size="48px" icon="github" />
             </a>
 
             <a
-                className={`${styles.socialLink} ${styles.twitterIcon}`}
+                className={`${css.socialLink} ${css.twitterIcon}`}
                 href="https://twitter.com/sondregj"
             >
-                <FeatherIcon className={styles.socialIcon} size="48px" icon="twitter" />
+                <FeatherIcon className={css.socialIcon} size="48px" icon="twitter" />
             </a>
 
             <a
-                className={`${styles.socialLink} ${styles.facebookIcon}`}
+                className={`${css.socialLink} ${css.facebookIcon}`}
                 href="https://facebook.com/sondregj"
             >
-                <FeatherIcon
-                    className={styles.socialIcon}
-                    size="48px"
-                    icon="facebook"
-                />
+                <FeatherIcon className={css.socialIcon} size="48px" icon="facebook" />
             </a>
 
             <a
-                className={`${styles.socialLink} ${styles.codePenIcon}`}
+                className={`${css.socialLink} ${css.codePenIcon}`}
                 href="https://codepen.com/sondregj"
             >
-                <FeatherIcon className={styles.socialIcon} size="48px" icon="codepen" />
+                <FeatherIcon className={css.socialIcon} size="48px" icon="codepen" />
             </a>
 
             <a
-                className={`${styles.socialLink} ${styles.webPageIcon}`}
+                className={`${css.socialLink} ${css.webPageIcon}`}
                 href="https://sondregjellestad.space"
             >
-                <FeatherIcon className={styles.socialIcon} size="48px" icon="globe" />
+                <FeatherIcon className={css.socialIcon} size="48px" icon="globe" />
             </a>
         </div>
-        <span className={styles.copyright}>Sondre Gjellestad | 2019</span>
+        <span className={css.copyright}>Sondre Gjellestad | 2019</span>
     </footer>
 )
