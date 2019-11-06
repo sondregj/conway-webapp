@@ -5,7 +5,7 @@ import { GameOfLifeView } from './views'
 
 import css from './App.module.scss'
 
-const App = () => (
+const App: React.FC = () => (
     <div className={css.app}>
         <Header />
 
