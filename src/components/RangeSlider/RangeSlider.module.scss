@@ -83,3 +83,9 @@ input[type='range'].rangeSlider:focus::-ms-fill-lower {
 input[type='range'].rangeSlider:focus::-ms-fill-upper {
     background: #404040;
 }
+
+@media (prefers-color-scheme: dark) {
+    input[type='range'].rangeSlider {
+        border-color: white !important;
+    }
+}

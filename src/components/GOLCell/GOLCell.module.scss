@@ -1,0 +1,30 @@
+div.container {
+    flex: 1 0 0;
+
+    margin: 3px 3px;
+    padding-top: 2.5%;
+
+    min-height: 1px;
+    min-width: 1px;
+
+    background-color: lightgrey;
+
+    &.alive {
+        background-color: blue;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    div.container {
+        background-color: rgb(63, 109, 109);
+
+        &.alive {
+            background-color: rgb(27, 214, 158);
+        }
+    }
+}

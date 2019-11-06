@@ -1,5 +1,9 @@
 import { createContext } from 'react'
 
-const GameOfLifeContext = createContext({ toggleCell: (x, y) => {} })
+interface IGameOfLifeContext {
+    toggleCell: (x: number, y: number) => void
+}
 
-export default GameOfLifeContext
+export const GameOfLifeContext = createContext<IGameOfLifeContext>({
+    toggleCell: (x, y) => undefined,
+})

@@ -1,0 +1,19 @@
+select.container {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*background-image: url();*/
+
+    padding: 0 12px;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+
+    border-radius: 0;
+
+    font-weight: bold;
+
+    option.option {
+        color: blue;
+    }
+}

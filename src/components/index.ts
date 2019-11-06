@@ -1,11 +1,14 @@
 // Top level components
-export { default as Footer } from './Footer'
+export { Header } from './Header'
+export { Footer } from './Footer'
 
 // Inputs
-export { default as Button } from './Button'
-export { default as RangeSlider } from './RangeSlider'
+export { Button } from './Button'
+export { RangeSlider } from './RangeSlider'
+export { DropdownMenu } from './DropdownMenu'
 
 // Game of Life
-export { default as GOLBoard } from './GOLBoard'
-export { default as GOLRow } from './GOLRow'
-export { default as GOLCell } from './GOLCell'
+export { GOLBoard } from './GOLBoard'
+export { GOLRow } from './GOLRow'
+export { GOLCell } from './GOLCell'
+export { GOLStatus } from './GOLStatus'

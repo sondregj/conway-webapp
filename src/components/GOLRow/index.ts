@@ -1,3 +1,1 @@
-import GOLRow from './GOLRow'
-
-export default GOLRow
+export { GOLRow } from './GOLRow'

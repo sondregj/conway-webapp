@@ -17,3 +17,10 @@ div.container {
         background-color: grey;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    div.container {
+        background-color: rgb(78, 78, 78);
+        border: 2px solid rgb(78, 78, 78);
+    }
+}

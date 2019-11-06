@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Footer } from './components'
+import { Header, Footer } from './components'
 import { GameOfLifeView } from './views'
 
 import css from './App.module.scss'
 
-const App = () => (
+const App: React.FC = () => (
     <div className={css.app}>
-        <header></header>
+        <Header />
 
         <main className={css.content}>
             <GameOfLifeView />

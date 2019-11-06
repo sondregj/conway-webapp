@@ -1,3 +1,1 @@
-import RangeSlider from './RangeSlider'
-
-export default RangeSlider
+export { RangeSlider } from './RangeSlider'
