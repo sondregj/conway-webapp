@@ -85,3 +85,10 @@ article.container {
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    article.container {
+        section.controller {
+        }
+    }
+}

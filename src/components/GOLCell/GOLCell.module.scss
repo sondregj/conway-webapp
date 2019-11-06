@@ -18,3 +18,13 @@ div.container {
         cursor: pointer;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    div.container {
+        background-color: rgb(63, 109, 109);
+
+        &.alive {
+            background-color: rgb(27, 214, 158);
+        }
+    }
+}
