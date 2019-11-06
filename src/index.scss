@@ -16,10 +16,18 @@ h1 {
 
 p,
 li {
-    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    line-height: 2;
 }
 
 * {
     box-sizing: border-box;
     line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(20, 20, 20);
+        color: white;
+    }
 }
